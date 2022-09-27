@@ -1,8 +1,13 @@
 import React, { useState } from "react";
 import "./Main.css";
 import RightSide from "../RightSide/RightSide";
-import { AiOutlineClose, AiFillQuestionCircle } from "react-icons/ai";
+import {
+  AiOutlineClose,
+  AiFillQuestionCircle,
+  AiOutlineMenu,
+} from "react-icons/ai";
 import { BsImages, BsEmojiSmile, BsUpload } from "react-icons/bs";
+import { CgMenuGridO } from "react-icons/cg";
 import { MdAttachFile } from "react-icons/md";
 import { ListItem } from "@mui/material";
 import Swal from "sweetalert2";
@@ -98,17 +103,16 @@ function Main() {
     <div className="main">
       <nav className="navbar navbar-expand-lg bg-white nav_bar_radius">
         <div className="container-fluid ">
-          <button
-            className="navbar-toggler"
-            type="button"
+          <CgMenuGridO
+            style={{ width: "30px", height: "50px" }}
             data-bs-toggle="collapse"
+            className="hide_btn"
             data-bs-target="#navbarTogglerDemo01"
             aria-controls="navbarTogglerDemo01"
             aria-expanded="false"
             aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
+          />
+
           <div className="hide_btn">
             <button className="save_btn" onClick={handleClickOpen}>
               {" "}
@@ -151,7 +155,7 @@ function Main() {
             <hr />
 
             <div className="space_main">
-              <p>Markdown formatting</p>
+              <p className="word">Markdown formatting</p>
               <div className="smile-icon">
                 <BsImages className="gap" />
                 <BsEmojiSmile className="gap" />
