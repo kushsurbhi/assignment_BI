@@ -17,26 +17,26 @@ function RightSide() {
       <b className="new">Add New Project</b>
       <hr />
       <div className="inline">
-        <p>Assignee</p>
+        <p className="head_color">Assignee</p>
         <AiOutlineSetting className="setting" />
       </div>
-      <div>
+      <div style={{ display: "flex" }}>
         <img src="one.jpg" alt="Avatar" className="avatar" />
-        <b>Mark Branson</b>
+        <p className="name">Mark Branson</p>
       </div>
-      <div>
+      <div style={{ display: "flex" }}>
         <img src="female.jpg" alt="Avatar" className="avatar" />
-        <b>Sara Summer</b>
+        <p className="name">Sara Summer</p>
       </div>
       <hr />
       <div className="inline">
-        <p>Status</p>
+        <p className="head_color">Status</p>
         <AiOutlineSetting className="setting" />
       </div>
       <button className="btn">In progress</button>
       <hr />
       <div className="inline">
-        <p>Priority</p>
+        <p className="head_color">Priority</p>
         <AiOutlineSetting className="setting" />
       </div>
       <button className="btn1">
@@ -44,8 +44,8 @@ function RightSide() {
       </button>
       <hr />
       <p className="gap1">Due date</p>
-      <div className="inline">
-        <p>select date</p>
+      <div className="inline_1">
+        <p className="head_color">select date</p>
         <BsCalendarEvent className="setting" />
       </div>
       <hr />

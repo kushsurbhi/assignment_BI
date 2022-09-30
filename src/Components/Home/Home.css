@@ -6,14 +6,21 @@ padding:2rem;
 }
 .home_1 {
    
-   border-radius: 20px;
-   border:none;
+  
    display:flex;
-   background-color: #fff;
- 
+   width:100%;
+   
    
  
-   justify-content: center;
+ 
+}
+.sidebar {
+   width:20%;
+   position:fixed
+}
+.right_side {
+    width:80%;
+    margin-left: auto;
 }
 @media screen and (min-width: 200px)  and (max-width:999px){
 

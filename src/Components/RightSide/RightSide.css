@@ -4,45 +4,53 @@
     border-radius: 10px;
     display: flex;
     flex-direction: column;
-    padding:14px;
+    padding:20px;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  margin-right: 1rem;
+   margin-top: 5rem;
    
     
 }
 .dropdown {
     width:100%;
-    height:2rem;
+    height:3rem;
     border-radius: 5px;
-    padding:5px;
+    padding:10px;
     border-color: rgb(209, 207, 207);
-    margin-top: 10px;
+    margin-top: 16px;
+    margin-bottom: 16px;
    
 }
 .new {
     margin-left: auto;
-    color: rgb(84, 84, 253);
+    color: rgb(100, 100, 255);
     margin-top:5px;
-    font-size: 13px;
+    font-size: 15px;
+    cursor: pointer;
 }
 hr {
     width:100%;
     /* color:rgb(226, 222, 222); */
     height: 1px;
-        background-color: #ccc;
+        background-color: #ccc !important;
         border: none;
 }
 .inline {
     display:flex;
     justify-content: space-between;
-    margin-top: -15px;
+    margin-top: 15px;
+}
+.head_color {
+  color:rgba(71, 71, 119, 0.719);
+font-weight:500
 }
 .setting {
     margin-top: 5px;
-    color:rgb(102, 101, 101);  
+    color:rgba(71, 71, 119, 0.719); 
+    cursor: pointer;
 }
 .gap1 {
-  margin-top: -5px;
+  margin-top: 15px;
+  color:rgba(71, 71, 119, 0.719); 
 }
 p {
     color:rgb(102, 101, 101);  
@@ -56,24 +64,26 @@ p {
     margin:5px
   }
   .btn {
-    width:8rem;
+    width:7rem;
     height:2rem;
     border-radius:10px;
     border:none;
-    background-color: rgb(245, 109, 18);
+    background-color: rgb(253, 139, 63);
     color:#fff;
-    font-weight: bold;
+    font-weight: 600;
     margin-bottom: 10px;
+    text-align: center;
 
   }
+ 
   .btn1 {
-    width:6rem;
+    width:4rem;
     height:2rem;
     border-radius:10px;
     border:none;
     background-color: rgb(168, 243, 212);
     color: rgb(27, 223, 141);
-    font-weight: bolder;
+    font-weight: 600;
     margin-bottom: 10px;
   
   }
@@ -81,13 +91,17 @@ p {
     width:100%;
     height: 2rem;
     border-radius: 8px;
-    border-color: gray;
-    font-weight: bold;
+    border:1px solid rgba(187, 187, 196, 0.719);
+    font-weight: 500;
     font-size: 16px;
-    color:rgb(3, 3, 65);
+    color:rgba(71, 71, 119, 0.719); 
     display:flex;
     align-items: center;
     justify-content: center;
+    background-color: #fff;
+  }
+  .noti_btn:hover {
+    background-color: rgb(243, 239, 239);
   }
   .bell {
     width:30px;
@@ -95,5 +109,17 @@ p {
     margin-right: 5px;
   }
   .para {
-    font-size: 11px;
+    font-size: 12px;
+    color:rgba(71, 71, 119, 0.719); 
+    margin-top: 15px;
   }
+  .inline_1 {
+    display:flex;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+.name {
+  font-weight: 500;
+  color:rgb(22, 2, 95);
+  cursor: pointer;
+}

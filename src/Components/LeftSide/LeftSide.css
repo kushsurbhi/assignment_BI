@@ -1,7 +1,7 @@
 
 
 .logo {
-    width:40%;
+    width:8rem;
     padding:20px;
 }
 .logo_div {
@@ -10,11 +10,18 @@
 .right_one {
     display: flex;
     justify-content: space-between;
+    
+    cursor: pointer;
+}
+.right_one:hover {
     background-color: rgb(242, 247, 248);
 }
 .in_a_line {
     display:flex;
     
+}
+.in_a_line:hover {
+    background-color: rgb(242, 247, 248);
 }
 .icon {
     margin: 20px;
@@ -26,19 +33,26 @@
 .rone {
     display: flex;
     justify-content: space-between;  
-    margin-top: -15px;
-
+   
+    cursor: pointer;
+}
+.rone:hover {
+    background-color: rgb(242, 247, 248);
+    color: rgb(5, 5, 83);
+  
 }
 .size {
-    font-weight:600;
+    font-weight:500;
     padding-top: 15px;
+    color:rgb(5, 5, 58)
 }
 .size_1 {
     font-weight:600;
-    font-size: 20px;
+    font-size: 16px;
     color:gray;
     padding-left: 20px;
-    margin-bottom: -5px;
+    font-weight: 'Roboto';
+    margin-top: 1rem;
 }
 .but {
     width:4rem;
@@ -55,17 +69,24 @@
   .bottom {
     width:90%;
     height:3rem;
-    border-radius:16px;
+    border-radius:10px;
     border:none;
     background-color:rgb(131, 131, 245);
     color:#fff;
-    font-weight: bolder;
-    margin-bottom:4rem !important;
+    font-weight: 500;
+    margin-bottom:1rem !important;
     margin:1rem;
     
     
 
    
+  }
+  .avatar_new {
+    vertical-align: middle;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin:5px
   }
   .container {
     justify-content: space-between;
@@ -81,5 +102,7 @@
    display:flex;
     flex-direction:column; 
     justify-content:space-between; 
-    height:100%;
+    height:100vh;
+    border: 1px solid rgba(201, 201, 204, 0.719);
+   
   }

@@ -1,15 +1,18 @@
 import React, { useState } from "react";
 import "./Main.css";
 import RightSide from "../RightSide/RightSide";
+import AppBar from "@mui/material/AppBar";
+import Toolbar from "@mui/material/Toolbar";
+import IconButton from "@mui/material/IconButton";
+import CloseIcon from "@mui/icons-material/Close";
 import {
   AiOutlineClose,
   AiFillQuestionCircle,
-  AiOutlineMenu,
+ 
 } from "react-icons/ai";
 import { BsImages, BsEmojiSmile, BsUpload } from "react-icons/bs";
 import { CgMenuGridO } from "react-icons/cg";
 import { MdAttachFile } from "react-icons/md";
-import { ListItem } from "@mui/material";
 import Swal from "sweetalert2";
 import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
@@ -19,6 +22,7 @@ import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
+import LeftSide from "../LeftSide/LeftSide";
 
 function Main() {
   const [description, setDescription] = useState("");
@@ -29,6 +33,7 @@ function Main() {
     filename: "./pills.png",
   });
   const [open, setOpen] = React.useState(false);
+  const [show, setShow] = React.useState(false);
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down("md"));
 
@@ -41,12 +46,20 @@ function Main() {
     window.location.reload(false);
   };
 
-  const handleFileChange = (event) => {
-    setFile({
-      bytes: event.target.files[0],
-      filename: URL.createObjectURL(event.target.files[0]),
-    });
+  const handleClickShow = () => {
+    setShow(true);
   };
+
+  const handleCloseShow = () => {
+    setShow(false);
+  };
+
+  // const handleFileChange = (event) => {
+  //   setFile({
+  //     bytes: event.target.files[0],
+  //     filename: URL.createObjectURL(event.target.files[0]),
+  //   });
+  // };
 
   function handleSaveFile(event) {
     setFile(event.target.files[0]);
@@ -101,7 +114,7 @@ function Main() {
   console.log("file=", file);
   return (
     <div className="main">
-      <nav className="navbar navbar-expand-lg bg-white nav_bar_radius">
+      {/* <nav className="navbar navbar-expand-lg bg-white nav_bar_radius">
         <div className="container-fluid ">
           <CgMenuGridO
             style={{ width: "30px", height: "50px" }}
@@ -123,15 +136,16 @@ function Main() {
             className="collapse navbar-collapse nav_bar"
             id="navbarTogglerDemo01"
           >
-            <div>
-              <AiOutlineClose className="cross" />
-              <b className="heading">Create a new Task</b>
+            <div style={{display:'flex'}}>
+              <AiOutlineClose style={{width:'20px', height:'20px'}} className="cross" />
+             
+              <div className="heading">Create a new Task</div>
             </div>
 
             <div className="main_start">
-              <AiFillQuestionCircle className="ques" />
-              <p className="help">Need help?</p>
-              <button className="create_btn">Save and create another</button>
+              <AiFillQuestionCircle className="ques hide" />
+              <p className="help hide">Need help?</p>
+              <button className="create_btn hide">Save and create another</button>
               <button className="save_btn" onClick={handleClickOpen}>
                 {" "}
                 Save{" "}
@@ -139,12 +153,53 @@ function Main() {
             </div>
           </div>
         </div>
-      </nav>
+      </nav> */}
+
+      {/* Main Head */}
+
+      <div className="display_header">
+        <CgMenuGridO
+          style={{ width: "30px", height: "50px", margin: "10px" }}
+          onClick={handleClickShow}
+        />
+
+        <img src="./Clever.png" className="logo"  alt="logo"/>
+      </div>
+
+      <div className="nav_bar_radius">
+        <div className="nav_bar">
+          <div style={{ display: "flex", paddingTop: "10px" }}>
+            <AiOutlineClose
+              style={{ width: "20px", height: "20px" }}
+              className="cross"
+            />
+
+            <div className="heading">Create a new Task</div>
+          </div>
+
+          <div className="hide_btn">
+            <button className="save_btn" onClick={handleClickOpen}>
+              {" "}
+              Save{" "}
+            </button>
+          </div>
+
+          <div className="main_start">
+            <AiFillQuestionCircle className="ques hide" />
+            <p className="help hide">Need help?</p>
+            <button className="create_btn hide">Save and create another</button>
+            <button className="save_btn" onClick={handleClickOpen}>
+              {" "}
+              Save{" "}
+            </button>
+          </div>
+        </div>
+      </div>
       {/*  Main Components  */}
 
       <div style={{ display: "flex" }} className="shown">
         <div className="col-md-8 mid">
-          <h2>Enter your task name...</h2>
+          <h2 className="top_gap">Enter your task name...</h2>
           <div className="input1">
             <textarea
               className="input_box"
@@ -168,11 +223,11 @@ function Main() {
             <p className="subtask_head">Subtasks</p>
             <div className="move">
               {checkList.map((item, index) => (
-                <div key={index} style={{ display: "flex" }}>
-                  <input value={item} type="checkbox" onChange={handleCheck} />
+                <div key={index} style={{ display: "flex", marginTop: "1rem" }}>
+                  <input value={item} type="checkbox" onChange={handleCheck}  />
 
                   <span className={isChecked(item)}>
-                    <p className="check1">{item}</p>
+                    <div className="check1">{item}</div>
                   </span>
                 </div>
               ))}
@@ -202,12 +257,13 @@ function Main() {
                 accept="image/*"
               />{" "}
               <label for="file-input">
-                <BsUpload /> {file.name}
+                <BsUpload style={{ width: "30px", height: "30px" }} />{" "}
+                {file.name}
               </label>
               <p className="up">Upload a file or drag and drop</p>
               <p className="upload2">PNG, JPG, GIF up to 3MB</p>
             </div>
-            <p className="upload_file">Uploaded File : {file.name}</p>
+            <p className="upload_file"> {file.name}</p>
           </div>
         </div>
         <div className="col-md-3 right">
@@ -251,6 +307,27 @@ function Main() {
             Close
           </Button>
         </DialogActions>
+      </Dialog>
+
+      <Dialog
+        fullScreen
+        open={show}
+        onClose={handleCloseShow}
+        // TransitionComponent={Transition}
+      >
+        <AppBar sx={{ position: "relative" }}>
+          <Toolbar>
+            <IconButton
+              edge="start"
+              color="inherit"
+              onClick={handleClose}
+              aria-label="close"
+            >
+              <CloseIcon />
+            </IconButton>
+          </Toolbar>
+        </AppBar>
+        <LeftSide />
       </Dialog>
     </div>
   );

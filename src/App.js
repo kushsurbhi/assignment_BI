@@ -3,6 +3,7 @@ import './App.css';
 import Home from './Components/Home/Home'
 import Main from './Components/Main/Main';
 import LeftSide from './Components/LeftSide/LeftSide';
+import Sidebar from './Components/Sidebar'
 function App() {
   return (
     <div>
