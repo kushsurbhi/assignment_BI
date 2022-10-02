@@ -35,16 +35,71 @@ function LeftSide() {
           <img src="./Clever.png" className="logo" alt="logo"/>
         </div>
 
-        <div className="right_one">
-          <div className="in_a_line">
+        <details className="right_one">
+          <summary className="in_a_line">
             <AiOutlineFolder className="icon" />
             <p className="size">Projects</p>
-          </div>
-          <div>
+         
+          <div style={{marginLeft:'auto'}}>
             {" "}
             <AiOutlineRight className="icon" />{" "}
           </div>
-        </div>
+          </summary>
+          <div className="drop">OverView</div>
+        </details>
+
+        <details className="right_one">
+          <summary className="in_a_line">
+            <BiBarChartSquare className="icon" />
+            <p className="size">Tasks</p>
+         
+          <div style={{marginLeft:'auto'}}>
+            {" "}
+            <AiOutlineRight className="icon" />{" "}
+          </div>
+          </summary>
+          <div className="drop">OverView</div>
+        </details>
+
+        <details className="right_one">
+          <summary className="in_a_line">
+            <BsFiles className="icon" />
+            <p className="size">Files</p>
+         
+          <div style={{marginLeft:'auto'}}>
+            {" "}
+            <AiOutlineRight className="icon" />{" "}
+          </div>
+          </summary>
+          <div className="drop">OverView</div>
+        </details>
+
+        <details className="right_one">
+          <summary className="in_a_line">
+            <AiOutlineFolder className="icon" />
+            <p className="size">Integrations</p>
+         
+          <div style={{marginLeft:'auto'}}>
+            {" "}
+            <AiOutlineRight className="icon" />{" "}
+          </div>
+          </summary>
+          <div className="drop">OverView</div>
+        </details>
+
+        <details className="right_one">
+          <summary className="in_a_line">
+            <AiOutlineSetting className="icon" />
+            <p className="size">Settings</p>
+         
+          <div style={{marginLeft:'auto'}}>
+            {" "}
+            <AiOutlineRight className="icon" />{" "}
+          </div>
+          </summary>
+          <div className="drop">OverView</div>
+        </details>
+
 
 {/* <div class="dropdown">
   <div  type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -71,7 +126,7 @@ function LeftSide() {
         
      
 
-        <div className="rone">
+        {/* <div className="rone">
           <div className="in_a_line">
             <BiBarChartSquare className="icon" />
             <p className="size">Tasks</p>
@@ -110,7 +165,7 @@ function LeftSide() {
             {" "}
             <AiOutlineRight className="icon" />{" "}
           </div>
-        </div>
+        </div> */}
         <hr />
         <p className="size_1">Resources</p>
         <div className="in_a_line">

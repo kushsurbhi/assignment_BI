@@ -25,6 +25,7 @@
 }
 .icon {
     margin: 20px;
+   
 }
 .space {
     padding-left:3.5rem;
@@ -105,4 +106,9 @@
     height:100vh;
     border: 1px solid rgba(201, 201, 204, 0.719);
    
+  }
+  .drop {
+     background-color: #fff;
+     padding-left:3.5rem;
+     padding-top: 10px;
   }

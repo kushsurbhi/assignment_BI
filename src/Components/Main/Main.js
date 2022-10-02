@@ -223,11 +223,11 @@ function Main() {
             <p className="subtask_head">Subtasks</p>
             <div className="move">
               {checkList.map((item, index) => (
-                <div key={index} style={{ display: "flex", marginTop: "1rem" }}>
+                <div key={index} style={{ display: "flex", marginTop: "1rem" }} >
                   <input value={item} type="checkbox" onChange={handleCheck}  />
 
-                  <span className={isChecked(item)}>
-                    <div className="check1">{item}</div>
+                  <span class={isChecked(item)}  >
+                    <div className="check1 ">{item}</div>
                   </span>
                 </div>
               ))}

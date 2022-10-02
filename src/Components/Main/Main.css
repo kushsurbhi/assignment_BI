@@ -317,6 +317,17 @@ input[type="checkbox"] {
     clip-path: circle(46% at 50% 50%  );
     cursor: pointer; 
     border: black !important;
+    
+   
+  }
+
+  .check {
+    height: 25px;
+    width: 25px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+  border: 1px dashed black !important;
    
   }
 
