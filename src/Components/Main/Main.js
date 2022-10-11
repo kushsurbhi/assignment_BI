@@ -5,11 +5,7 @@ import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
-import {
-  AiOutlineClose,
-  AiFillQuestionCircle,
- 
-} from "react-icons/ai";
+import { AiOutlineClose, AiFillQuestionCircle } from "react-icons/ai";
 import { BsImages, BsEmojiSmile, BsUpload } from "react-icons/bs";
 import { CgMenuGridO } from "react-icons/cg";
 import { MdAttachFile } from "react-icons/md";
@@ -25,6 +21,7 @@ import { useTheme } from "@mui/material/styles";
 import LeftSide from "../LeftSide/LeftSide";
 
 function Main() {
+  const [taskName, setTaskName] = useState("");
   const [description, setDescription] = useState("");
   const [checked, setChecked] = useState([]);
   const [task, setTask] = useState("");
@@ -38,7 +35,12 @@ function Main() {
   const fullScreen = useMediaQuery(theme.breakpoints.down("md"));
 
   const handleClickOpen = () => {
-    setOpen(true);
+    if(taskName && description && checked && file) {
+      setOpen(true);
+    }
+    else {
+      alert("please enter taskname")
+    }
   };
 
   const handleClose = () => {
@@ -80,6 +82,7 @@ function Main() {
     } else {
       updatedList.splice(checked.indexOf(event.target.value), 1);
     }
+    console.log("nnnnnnnnnnnnnnnnnnnnn",updatedList)
     setChecked(updatedList);
   };
 
@@ -108,9 +111,10 @@ function Main() {
       timer: 1500,
     });
   };
+  console.log("Taskname=",taskName)
   console.log("description=", description);
-  console.log("checked Items=", checkedItems);
-  console.log("tasks=", task);
+  console.log("checked Items=", checked);
+
   console.log("file=", file);
   return (
     <div className="main">
@@ -163,18 +167,18 @@ function Main() {
           onClick={handleClickShow}
         />
 
-        <img src="./Clever.png" className="logo"  alt="logo"/>
+        <img src="./Clever.png" className="logo" alt="logo" />
       </div>
 
       <div className="nav_bar_radius">
         <div className="nav_bar">
-          <div style={{ display: "flex", paddingTop: "10px" }}>
+          <div style={{ display: "flex" }}>
             <AiOutlineClose
               style={{ width: "20px", height: "20px" }}
               className="cross"
             />
-
-            <div className="heading">Create a new Task</div>
+            <div className="vr opacity-20 my-1"></div>
+            <div className="heading">Create a new task</div>
           </div>
 
           <div className="hide_btn">
@@ -199,7 +203,12 @@ function Main() {
 
       <div style={{ display: "flex" }} className="shown">
         <div className="col-md-8 mid">
-          <h2 className="top_gap">Enter your task name...</h2>
+          <input
+            className="top_gap"
+            value={taskName}
+            placeholder="Enter your task name..."
+            onChange={(e) => setTaskName(e.target.value)}
+          />
           <div className="input1">
             <textarea
               className="input_box"
@@ -220,49 +229,63 @@ function Main() {
           </div>
 
           <div className="subtask">
-            <p className="subtask_head">Subtasks</p>
-            <div className="move">
-              {checkList.map((item, index) => (
-                <div key={index} style={{ display: "flex", marginTop: "1rem" }} >
-                  <input value={item} type="checkbox" onChange={handleCheck}  />
+            <div className="vr opacity-20 my-1"></div>
+            <div
+              style={{ paddingLeft: "30px", width: "100%", marginTop: "-10px" }}
+            >
+              <p className="subtask_head_1">Subtasks</p>
+              <div className="move">
+                {checkList.map((item, index) => (
+                  <div
+                    key={index}
+                    style={{ display: "flex", marginTop: "1rem" }}
+                  >
+                    <input
+                      value={item}
+                      type="checkbox"
+                      onChange={handleCheck}
+                    />
 
-                  <span class={isChecked(item)}  >
-                    <div className="check1 ">{item}</div>
-                  </span>
-                </div>
-              ))}
-            </div>
-            <input
-              className="input_tasks"
-              value={task}
-              placeholder="Add another subtask"
-              onChange={(e) => setTask(e.target.value)}
-            />
-            <div className="task_btn">
-              <button className="task_btn1" onClick={handleCancel}>
-                Cancel
-              </button>
-              <button className="task_btn2" onClick={handleSaveTask}>
-                Save task
-              </button>
+                    <span class={isChecked(item)}>
+                      <div className="check1 ">{item}</div>
+                    </span>
+                  </div>
+                ))}
+              </div>
+              <input
+                className="input_tasks"
+                value={task}
+                placeholder="Add another subtask"
+                onChange={(e) => setTask(e.target.value)}
+              />
+              <div className="task_btn">
+                <button className="task_btn1" onClick={handleCancel}>
+                  Cancel
+                </button>
+                <button className="task_btn2" onClick={handleSaveTask}>
+                  Save task
+                </button>
+              </div>
             </div>
           </div>
-          <p className="subtask_head">Attachment</p>
+          <p className="subtask_head">Attachments</p>
           <div className="input_box_1">
-            <div className="attach_box_dot">
-              <input
-                type="file"
-                id="file-input"
-                onChange={(event) => handleSaveFile(event)}
-                accept="image/*"
-              />{" "}
-              <label for="file-input">
-                <BsUpload style={{ width: "30px", height: "30px" }} />{" "}
-                {file.name}
-              </label>
-              <p className="up">Upload a file or drag and drop</p>
-              <p className="upload2">PNG, JPG, GIF up to 3MB</p>
-            </div>
+            <label for="file-input" className="label">
+              <div className="attach_box_dot">
+                <input
+                  className="input_hidden"
+                  type="file"
+                  id="file-input"
+                  onChange={(event) => handleSaveFile(event)}
+                  accept="image/*"
+                />{" "}
+                <BsUpload
+                  style={{ width: "40px", height: "35px", color: "#525f7f" }}
+                />{" "}
+                <p className="up">Upload a file or drag and drop</p>
+                <p className="upload2">PNG, JPG, GIF up to 3MB</p>
+              </div>
+            </label>
             <p className="upload_file"> {file.name}</p>
           </div>
         </div>
@@ -281,32 +304,44 @@ function Main() {
           Task Detail
         </DialogTitle>
         <DialogContent>
+        
           <DialogContentText>
-            <div className="dialog_show">
+          <div className="dialog_show">
               <p className="dialog_title">Task Name:</p>
+              <p className="result"> {taskName}</p>
+            </div>
+            <div className="dialog_show">
+              <p className="dialog_title">Description:</p>
               <p className="result"> {description}</p>
             </div>
+           
             <div className="dialog_show">
-              <p className="dialog_title"> Sub-Task List: </p>
+              <p className="dialog_title"> Sub-Task CheckList: </p>
               <p className="result">
-                {" "}
-                {[checked]} <br /> {task}
+                  <ul>
+                  {
+                     checked.map((a)=> <li>{a}</li>) 
+                  } 
+                  </ul>
               </p>
             </div>
+           
             <div className="dialog_show">
               <p className="dialog_title"> Attatch File: </p>
               <p className="result">
                 {" "}
-                {file.name} <img src="file.filename" alt="img" />
+                {file.name} 
               </p>
             </div>
-          </DialogContentText>
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={handleClose} className="save_btn">
+            <div>
+            <button onClick={handleClose} className="save_btn">
             Close
-          </Button>
-        </DialogActions>
+          </button>
+            </div>
+          </DialogContentText>
+           
+        </DialogContent>
+        
       </Dialog>
 
       <Dialog

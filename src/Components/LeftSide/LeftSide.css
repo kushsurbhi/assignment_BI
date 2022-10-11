@@ -1,114 +1,139 @@
-
-
 .logo {
-    width:8rem;
-    padding:20px;
+  width: 8rem;
+  padding: 25px;
 }
 .logo_div {
-    height:5rem;
+  height: 4rem;
 }
 .right_one {
-    display: flex;
-    justify-content: space-between;
-    
-    cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  margin-top: -10px;
+  margin-bottom: -10px;
+  
 }
 .right_one:hover {
-    background-color: rgb(242, 247, 248);
+  background-color: rgb(242, 247, 248);
+  color:#626c86;
 }
 .in_a_line {
-    display:flex;
-    
+  display: flex;
 }
 .in_a_line:hover {
-    background-color: rgb(242, 247, 248);
+  background-color: rgb(242, 247, 248);
 }
 .icon {
-    margin: 20px;
-   
+  margin: 20px;
+  color:#626c86;
+  
 }
+.icon_1 {
+    margin: 20px;
+    color:#080a16;;
+  }
 .space {
-    padding-left:3.5rem;
-    font-weight:600;
+  padding-left: 3.5rem;
+  font-weight: 600;
 }
 .rone {
-    display: flex;
-    justify-content: space-between;  
-   
-    cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+
+  cursor: pointer;
 }
 .rone:hover {
-    background-color: rgb(242, 247, 248);
-    color: rgb(5, 5, 83);
-  
+  background-color: rgb(242, 247, 248);
+  color: rgb(5, 5, 83);
 }
 .size {
-    font-weight:500;
-    padding-top: 15px;
-    color:rgb(5, 5, 58)
+  font-size: .875rem;
+  font-weight: 500;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  padding-top: 15px;
+  color: #080a16;
+}
+.size:hover{
+   color:#626c86;
 }
 .size_1 {
-    font-weight:600;
-    font-size: 16px;
-    color:gray;
-    padding-left: 20px;
-    font-weight: 'Roboto';
-    margin-top: 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+
+  color: gray;
+  padding-left: 20px;
+
+  margin-top: 1rem;
 }
 .but {
-    width:4rem;
-    height:2rem;
-    border-radius:16px;
-    border:none;
-    background-color: rgb(168, 243, 212);
-    color: rgb(27, 223, 141);
-    font-weight: bolder;
-    margin-right: 20px;
-    margin-top: 10px;
+  width: 4rem;
+  height: 2rem;
+  border-radius: 16px;
+  border: none;
+  background-color: rgb(168, 243, 212);
+  color: rgb(27, 223, 141);
+  font-weight: bolder;
+  margin-right: 20px;
+  margin-top: 10px;
+}
+.bottom {
+  width: 80%;
+  height: 3.5rem;
+  border-radius: 10px;
+  border: none;
+  background-color:#5c60f5;
+  color: #fff;
+  font-weight: 500;
+  margin-bottom: 1rem !important;
+  margin: 1rem;
   
-  }
-  .bottom {
-    width:90%;
-    height:3rem;
-    border-radius:10px;
-    border:none;
-    background-color:rgb(131, 131, 245);
-    color:#fff;
-    font-weight: 500;
-    margin-bottom:1rem !important;
-    margin:1rem;
-    
-    
-
-   
-  }
-  .avatar_new {
-    vertical-align: middle;
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    margin:5px
-  }
-  .container {
-    justify-content: space-between;
-    flex-direction: column;
-    height: 100vh;
-    display: flex;
-  }
-  .container .btn-holder {
-    justify-content: flex-end;
-    display: flex;
-  }
-  .main_div {
-   display:flex;
-    flex-direction:column; 
-    justify-content:space-between; 
-    height:100vh;
-    border: 1px solid rgba(201, 201, 204, 0.719);
-   
-  }
-  .drop {
-     background-color: #fff;
-     padding-left:3.5rem;
-     padding-top: 10px;
-  }
+    font-size: inherit;
+    line-height: inherit;
+    font-size: .875rem;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+.bottom:hover {
+    background-color:#454ac9;
+}
+.avatar_new {
+  
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 15px;
+ 
+}
+.container {
+  justify-content: space-between;
+  flex-direction: column;
+  height: 100vh;
+  display: flex;
+}
+.container .btn-holder {
+  justify-content: flex-end;
+  display: flex;
+}
+.main_div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  border: 1px solid #e7eaf0;
+}
+.drop {
+  font-size: 0.875rem;
+  background-color: #fff;
+  padding-left: 3.5rem;
+  padding-top: 5px;
+  padding-bottom: 10px;
+}
+.logo_para {
+    margin-top: 1rem;
+  margin: 1.5rem;
+  color: #16192c;
+  font-weight: 400;
+  font-stretch: normal;
+  font-size: 24px;
+  line-height: 32px;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

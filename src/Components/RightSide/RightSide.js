@@ -8,7 +8,7 @@ import "./RightSide.css";
 function RightSide() {
   return (
     <div className="first">
-      <b>Task settings</b>
+      <p className="task">Task settings</p>
       <div>
         <select className="dropdown">
           <option>Clever Project</option>
